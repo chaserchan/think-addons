@@ -177,41 +177,41 @@ if (!function_exists('addons_url')) {
 }
 
 
-if (!function_exists('get_addon_list')) {
-    /**
-     * 获得插件列表
-     * @return array
-     */
-    function get_addon_list()
-    {
-        $results = scandir(ADDON_PATH);
-        $list = [];
+// if (!function_exists('get_addon_list')) {
+//     /**
+//      * 获得插件列表
+//      * @return array
+//      */
+//     function get_addon_list()
+//     {
+//         $results = scandir(ADDON_PATH);
+//         $list = [];
 
-        foreach ($results as $name) {
-            if ($name === '.' or $name === '..')
-                continue;
-            if (is_file(ADDON_PATH . $name))
-                continue;
-            $addonDir = ADDON_PATH . $name . DS;
-            if (!is_dir($addonDir))
-                continue;
+//         foreach ($results as $name) {
+//             if ($name === '.' or $name === '..')
+//                 continue;
+//             if (is_file(ADDON_PATH . $name))
+//                 continue;
+//             $addonDir = ADDON_PATH . $name . DS;
+//             if (!is_dir($addonDir))
+//                 continue;
 
-            if (!is_file($addonDir . 'Plugin.php'))
-                continue;
+//             if (!is_file($addonDir . 'Plugin.php'))
+//                 continue;
 
-            //这里不采用get_addon_info是因为会有缓存
-            //$info = get_addon_info($name);
-            $info_file = $addonDir . 'addon.ini';
+//             //这里不采用get_addon_info是因为会有缓存
+//             //$info = get_addon_info($name);
+//             $info_file = $addonDir . 'addon.ini';
 
-            if (!is_file($info_file))
-                continue;
+//             if (!is_file($info_file))
+//                 continue;
 
-            $info = parse_ini_file($info_file, true, INI_SCANNER_TYPED);
-            if (!isset($info['name']))
-                continue;
-            $info['url'] = addons_url($name);
-            $list[$name] = $info;
-        }
-        return $list;
-    }
-}
+//             $info = parse_ini_file($info_file, true, INI_SCANNER_TYPED);
+//             if (!isset($info['name']))
+//                 continue;
+//             $info['url'] = addons_url($name);
+//             $list[$name] = $info;
+//         }
+//         return $list;
+//     }
+// }
