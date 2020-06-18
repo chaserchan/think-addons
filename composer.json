@@ -1,11 +1,11 @@
 {
-    "name": "zz-studio/think-addons",
+    "name": "chasechan/think-addons",
     "description": "The ThinkPHP6 Addons Package",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "byron",
-            "email": "xiaobo.sun@qq.com"
+            "name": "chasechan",
+            "email": "250379975@qq.com"
         }
     ],
     "require": {
