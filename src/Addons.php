@@ -96,8 +96,6 @@ abstract class Addons
      */
     protected function fetch($template = '', $vars = [])
     {
-        dump($this->addon_path);
-
         return $this->view->fetch($template, $vars);
     }
 
